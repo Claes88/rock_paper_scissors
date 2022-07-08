@@ -61,19 +61,19 @@ function game(){
     let playerSelection;
     let outcome;
     //loop through playRound five times
-    for(i = 1; i <=5; i++){
+    //for(i = 1; i <=5; i++){
         //Get the computer selection
-        computerSelection = computerPlay();
+    computerSelection = computerPlay();
         //let user choose rps
-        playerSelection = prompt('Enter rock or paper or scissor').toLowerCase();
-        outcome = playRound(playerSelection,computerSelection);
+    playerSelection = prompt('Enter rock or paper or scissor').toLowerCase();
+    outcome = playRound(playerSelection,computerSelection);
         //update score depending of outcome
-        if(outcome === 'you'){
-            yourScore += 1;
-        } else if(outcome === 'comp'){
-            compScore += 1;
-        }        
-    }
+    if(outcome === 'you'){
+        yourScore += 1;
+    } else if(outcome === 'comp'){
+        compScore += 1;
+    }        
+    //}
     
     //return the winner of the 5 rounds
     if(yourScore > compScore){
