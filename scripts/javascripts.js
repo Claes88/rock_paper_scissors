@@ -1,5 +1,4 @@
-console.log(game());
-
+//console.log(game());
 //Create afunction playRound to play rps with computer
 function playRound(playerSelection,computerSelection){
     //Declare outcome string
@@ -51,6 +50,7 @@ function computerPlay(){
     }
 }
 
+
 //a function game that will play 5 rounds of rps
 function game(){
 
@@ -60,12 +60,13 @@ function game(){
     let computerSelection;
     let playerSelection;
     let outcome;
+
     //loop through playRound five times
     //for(i = 1; i <=5; i++){
         //Get the computer selection
     computerSelection = computerPlay();
         //let user choose rps
-    playerSelection = prompt('Enter rock or paper or scissor').toLowerCase();
+    //playerSelection = prompt('Enter rock or paper or scissor').toLowerCase();
     outcome = playRound(playerSelection,computerSelection);
         //update score depending of outcome
     if(outcome === 'you'){
@@ -85,5 +86,16 @@ function game(){
     }
 }
 
+function eventOutcome(ev){
+    console.log(ev);
+}
 
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', event => {
+        playRound(button.id,computerPlay());
+    });  
+});
 
