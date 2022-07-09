@@ -1,43 +1,59 @@
 //console.log(game());
 //Create afunction playRound to play rps with computer
+const div = document.querySelector('div'); 
+div.style.color = 'blue';
+const p = document.createElement('p');
+
 function playRound(playerSelection,computerSelection){
-    //Declare outcome string
+    
     let outcome;
     console.log(computerSelection)
     console.log(playerSelection)
     //compare what user and computer selected
     if(playerSelection==='rock'&&computerSelection==='paper'){
-        console.log('You loose! Paper beats Rock');
+        //console.log('You loose! Paper beats Rock');
+        displayOutcome('You loose! Paper beats Rock');
         return 'comp';
     } else if(playerSelection==='rock'&&computerSelection==='scissor'){
-        console.log('You win! Rock beats Scissor'); 
+        //console.log('You win! Rock beats Scissor'); 
+        displayOutcome('You win! Rock beats Scissor');
         return 'you';
     }
     else if(playerSelection==='paper'&&computerSelection==='scissor'){
-        console.log('You loose! Scissor beat Paper');
+        //console.log('You loose! Scissor beat Paper');
+        displayOutcome('You loose! Scissor beat Paper');
         return 'comp'; 
-    }
+    } 
     else if(playerSelection==='paper'&&computerSelection==='rock'){
-        console.log('You win! Paper beats Rock'); 
+        //console.log('You win! Paper beats Rock'); 
+        displayOutcome('You win! Paper beats Rock'); 
         return 'you';
     }
     else if(playerSelection==='scissor'&&computerSelection==='rock'){
-        console.log('You loose! Rock beats Scissor'); 
+        //console.log('You loose! Rock beats Scissor'); 
+        displayOutcome('You loose! Rock beats Scissor');         
         return 'comp';
     }
     else if(playerSelection==='scissor'&&computerSelection==='paper'){
-        console.log('You win! Scissor beats Paper'); 
+        //console.log('You win! Scissor beats Paper'); 
+        displayOutcome('You win! Scissor beats Paper'); 
         return 'you';
     } else{
-        console.log('DRAW');
-        return 'draw';
+       // console.log('DRAW');
+       displayOutcome('DRAW'); 
+       return 'draw';
     }
+}
+
+function displayOutcome(text){
+    p.textContent = text;
+    div.append(p);
 }
 
 //A function computerPlay to decide computer outcome
 function computerPlay(){
     //Declare variable to store rock/paper/scissor as string
-    let selection;
+    //let selection;
     //Generate a random number, only three different outcomes
     let number = Math.floor(Math.random()*3);
     //decide rock/paper/scissor based on number
